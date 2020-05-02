@@ -1,4 +1,5 @@
 import pandas as pd
+import tkinter
 list1=['a','b','c']
 list_repeat=[]
 data=pd.read_excel('amin.xlsx',skiprows=2,usecols='B:E')
