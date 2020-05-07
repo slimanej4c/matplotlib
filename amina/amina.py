@@ -1,23 +1,9 @@
 
 from tkinter import *
 from tkinter import ttk
-from tkinter.filedialog import askopenfilename,askdirectory
+from tkinter.filedialog import askopenfilename
 from textblob import   TextBlob
-from tkinter import messagebox
-import time
-import nltk
-import xlrd
-from openpyxl import *
-from openpyxl.styles.differential import DifferentialStyle
-import openpyxl
-from xlwt import  Workbook
-import re
-from openpyxl import Workbook
 import pandas as pd
-from openpyxl.styles import Font, Alignment, PatternFill, colors
-from openpyxl.worksheet.table import Table, TableStyleInfo
-from tkinter.ttk import Progressbar
-import tf_idf
 
 
 class job:
@@ -169,7 +155,6 @@ class job:
 
 
     def set_data(self):
-        import  time
         self.FILETYPES = [("text files", "*.csv")]
         self.chemin1=(askopenfilename())
         #date_now = time.strftime('%d%m%Y')
@@ -218,8 +203,6 @@ class job:
 
 
 if __name__ == '__main__':
-     import tkinter as  tk
-
      root=Tk()
      job(root)
      root.mainloop()
