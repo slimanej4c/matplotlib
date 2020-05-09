@@ -76,7 +76,6 @@ class tf_idf():
 
             return idf_dict
 
-
     def count_tf_idf(self,tfblow,idfs):
             tf_idf={}
             lts_tf_idf=[]
@@ -89,5 +88,4 @@ class tf_idf():
             return lts_tf_idf
 
 list_text=[["the cat sat in my face"],["the dog sat in my bed"]]
-
 tf_idf(list_text)

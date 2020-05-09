@@ -1,12 +1,33 @@
-import nltk
+
+
+
+
+
+
+import xlrd
+import django
 import pandas as pd
-
-
-data=pd.read_excel
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 from nltk.tokenize import sent_tokenize ,word_tokenize
-#nltk.download()
 
-exemple_text="hello Mr. Smith  ,how are you doing today ? The weather is great and python is awsome"
+header_list = ["id", "sentiment", "statement"]
+data=pd.read_csv('train.csv',encoding = "ISO-8859-1",sep=',',names=header_list)
+data=data['statement'][0:10]
 
-print(sent_tokenize(exemple_text))
-print(word_tokenize(exemple_text))
+
+stop_words=set(stopwords.words("english"))
+
+ps=PorterStemmer()
+for i in data:
+    print("i",i)
+    print("sent tokensize",sent_tokenize(i))
+    print("word toknize",word_tokenize(i))
+    a=word_tokenize(i)
+    l=[]
+    for y in a :
+
+        l.append(ps.stem(y))
+    print("stemmer",l)
+
+    print("#################################""")
